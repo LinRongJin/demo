@@ -1,0 +1,15 @@
+spring:
+  thymeleaf:
+    cache: false
+    servlet:
+      content-type: text/html
+    mode: HTML5
+    encoding: UTF-8
+    prefix: classpath:/X-admin/
+    suffix: .html
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/web?charaterEncoding=UTF-8
+    username: root
+    password: 123456
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>user</title>
+  <link rel="stylesheet" href="layui/css/layui.css">
+</head>
+<body>
+
+<table class="layui-table">
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>username</th>
+    <th>sex</th>
+    <th>age</th>
+    <th>删除</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="user:${userlist}">
+    <td th:text="${user.id}"></td>
+    <td th:text="${user.username}"></td>
+    <td th:text="${user.sex}"></td>
+    <td th:text="${user.age}"></td>
+    <td><a th:href="@{/deleteUser(id=${user.id})}">delete</a> </td>
+    <th/>
+  </tr>
+  </tbody>
+</table>
+<form action="addUser" method="get">
+  <table class="layui-table layui-col-md6 layui-inline">
+    <thead>
+    <tr>
+      <th>id</th>
+      <th>username</th>
+      <th>sex</th>
+      <th>age</th>
+    </tr>
+    </thead>
+    <tbody>
+    <td><input name="id" /></td>
+    <td><input name="username" /></td>
+    <td><input name="sex" /></td>
+    <td><input name="age" /></td>
+    </tbody>
+  </table>
+  <button type="submit" class="layui-btn layui-inline">submit</button>
+</form>
+</body>
+</html>
