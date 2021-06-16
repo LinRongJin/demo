@@ -14,6 +14,7 @@ public class IndexController {
     @RequestMapping("/hello")
     public String index(HttpServletRequest request, HttpServletResponse response, Model model){
         model.addAttribute("message","hello springboot");
+        System.out.println("https");
         return "hello.html";
     }
 
